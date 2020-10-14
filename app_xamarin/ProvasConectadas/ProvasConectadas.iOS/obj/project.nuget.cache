@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "EwMdchf6pWDToYpLp2+Z4ueYvzluCFZqnRIaPnwus3XPdthwxw2hbsJYAM7TaISnX+yxfDrSEYgjqa/nYyWyzw==",
+  "success": true,
+  "projectFilePath": "D:\\Documentos\\Provas Conectadas\\ProvasConectadas\\ProvasConectadas\\ProvasConectadas.iOS\\ProvasConectadas.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tales\\.nuget\\packages\\exiflib.pcl\\1.0.1\\exiflib.pcl.1.0.1.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\octane.xam.videoplayer\\3.1.0\\octane.xam.videoplayer.3.1.0.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\plugin.audiorecorder\\1.1.0\\plugin.audiorecorder.1.1.0.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\plugin.toast\\2.1.2\\plugin.toast.2.1.2.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\sqlitepclraw.provider.sqlite3.ios_unified\\1.1.13\\sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xam.plugin.media\\4.0.1.5\\xam.plugin.media.4.0.1.5.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xam.plugins.texttospeech\\4.0.0.7\\xam.plugins.texttospeech.4.0.0.7.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xamarin.forms\\4.4.0.991537\\xamarin.forms.4.4.0.991537.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xamarin.forms.inputkit\\3.1.0\\xamarin.forms.inputkit.3.1.0.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xlabs.core\\2.0.5782\\xlabs.core.2.0.5782.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xlabs.forms\\2.0.5782\\xlabs.forms.2.0.5782.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xlabs.ioc\\2.0.5782\\xlabs.ioc.2.0.5782.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xlabs.platform\\2.0.5782\\xlabs.platform.2.0.5782.nupkg.sha512",
+    "C:\\Users\\tales\\.nuget\\packages\\xlabs.serialization\\2.0.5782\\xlabs.serialization.2.0.5782.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ProvasConectadas.View.Admin.CadastroTutor.ListaTutor">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="background_atulizar_tutores.png" 
+                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Aspect="Fill"
+                       Opacity="0.5"/>
+
+            <!-- Para Fazer - Busy indicator - animação que o sistema está trabalhando-->
+
+          <ImageButton  x:Name="bt_atualiza" Source="bt_atualizar_tutores.png"
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Center" WidthRequest="350" Aspect="AspectFit"
+                                    Clicked="Bt_atualiza_Clicked">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal">
+                  <VisualState.Setters>
+                    <Setter Property="Scale" Value="1" />
+                  </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Property="Scale" Value="0.8" />
+                  </VisualState.Setters>
+                </VisualState>
+
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+          </ImageButton>
+
+            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand">
+                <ScrollView >
+                    <ListView x:Name="listatutor"  HasUnevenRows="true" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding nome}" 
+                                           HorizontalTextAlignment="Start" 
+                                           FontSize="Medium" TextColor="Black"
+                                           LineBreakMode ="TailTruncation"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

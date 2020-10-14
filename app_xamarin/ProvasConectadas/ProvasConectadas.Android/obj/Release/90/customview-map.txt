@@ -1,0 +1,79 @@
+@string/appbar_scrolling_view_behavior;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\flyoutcontent.xml
+@string/appbar_scrolling_view_behavior;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\rootlayout.xml
+adaptive-icon;obj\Release\90\res\mipmap-anydpi-v26\icon.xml
+adaptive-icon;obj\Release\90\res\mipmap-anydpi-v26\icon_round.xml
+alpha;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\enterfromleft.xml
+alpha;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\exittoleft.xml
+android.support.design.widget.AppBarLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\flyoutcontent.xml
+android.support.design.widget.AppBarLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\rootlayout.xml
+android.support.design.widget.AppBarLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\shellcontent.xml
+android.support.design.widget.BottomNavigationView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\bottomtablayout.xml
+android.support.design.widget.CoordinatorLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\flyoutcontent.xml
+android.support.design.widget.CoordinatorLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\rootlayout.xml
+android.support.design.widget.CoordinatorLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\shellcontent.xml
+android.support.design.widget.TabLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\rootlayout.xml
+android.support.design.widget.TabLayout;obj\Release\90\res\layout\tabbar.xml
+android.support.v7.widget.RecyclerView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\flyoutcontent.xml
+android.support.v7.widget.Toolbar;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\rootlayout.xml
+android.support.v7.widget.Toolbar;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\shellcontent.xml
+android.support.v7.widget.Toolbar;obj\Release\90\res\layout\toolbar.xml
+background;obj\Release\90\res\mipmap-anydpi-v26\icon.xml
+background;obj\Release\90\res\mipmap-anydpi-v26\icon_round.xml
+cache-path;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+color;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\drawable\calendar_bg_selector.xml
+color;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\colors.xml
+color;obj\Release\90\res\values\colors.xml
+dimen;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\dimens.xml
+external-cache-path;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-files-path;obj\Release\90\res\xml\file_paths.xml
+external-path;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+foreground;obj\Release\90\res\mipmap-anydpi-v26\icon.xml
+foreground;obj\Release\90\res\mipmap-anydpi-v26\icon_round.xml
+FrameLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\bottomtablayout.xml
+include;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\month.xml
+item;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\values\styles.xml
+item;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\drawable\calendar_bg_selector.xml
+item;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\styles.xml
+item;obj\Release\90\res\values\styles.xml
+LinearLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\bottomtablayout.xml
+paths;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;obj\Release\90\res\xml\file_paths.xml
+RelativeLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\calendar_pager_layout.xml
+RelativeLayout;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\calendar_picker.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\4\jl\res\values\input_styles.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\values\styles.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\attrs.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\colors.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\dimens.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\strings.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\styles.xml
+resources;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\57\jl\res\values\strings.xml
+resources;obj\Release\90\res\values\colors.xml
+resources;obj\Release\90\res\values\styles.xml
+selector;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\drawable\calendar_bg_selector.xml
+set;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\enterfromleft.xml
+set;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\enterfromright.xml
+set;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\exittoleft.xml
+set;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\exittoright.xml
+string;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\strings.xml
+string;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\57\jl\res\values\strings.xml
+style;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\4\jl\res\values\input_styles.xml
+style;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\values\styles.xml
+style;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\values\styles.xml
+style;obj\Release\90\res\values\styles.xml
+TextView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\calendar_pager_layout.xml
+TextView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\month.xml
+translate;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\enterfromleft.xml
+translate;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\enterfromright.xml
+translate;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\exittoleft.xml
+translate;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\anim\exittoright.xml
+xamarin.forms.platform.android.appcompat.FormsViewPager;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\54\jl\res\layout\rootlayout.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarArrowView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\calendar_pager_layout.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarArrowView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\calendar_picker.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarCellView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\week.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarGridView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\month.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarPickerView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\calendar_picker.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarPickerView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\dialog.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarRowView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\month.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.CalendarRowView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\week.xml
+XLabs.Forms.Controls.MonoDroid.TimesSquare.MonthView;D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\90\lp\56\jl\res\layout\month.xml

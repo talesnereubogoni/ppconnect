@@ -1,0 +1,3 @@
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\71\MonoAndroid,Version=v7.1.AssemblyAttributes.cs
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\71\build.props
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.Android\obj\Release\71\adb.props

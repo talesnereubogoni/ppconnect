@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProvasConectadas.View.Admin.EntradaTutor"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="background_img"  Source="entrada_tutor_back.png" 
+               Grid.Row="0" Grid.Column="0" Aspect="Fill" Grid.RowSpan="3"/>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" 
+                         Grid.Row="1" Grid.Column="0">
+                <Entry x:Name="login" 
+                       FontSize="Medium"
+                       Margin="50,0,50,15"
+                       BackgroundColor="White"
+                       Placeholder="Email"
+                       Text="ricardo@unemat.br"
+                       PlaceholderColor="DarkGray"
+                       TextColor="Black"/>
+                <Entry x:Name="senha" 
+                       FontSize="Medium"
+                       Margin="50,0,50,15"
+                       BackgroundColor="White"                       
+                       IsPassword="true"                        
+                       Placeholder="Senha"
+                       Text="123"
+                       PlaceholderColor="DarkGray"
+                       TextColor="Black"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20">
+                    <Button x:Name="bt_sair" 
+                        FontSize="Medium"
+                        Text="Sair" BackgroundColor="SeaGreen" 
+                        Margin="15" HorizontalOptions="FillAndExpand" 
+                        CornerRadius="10"
+                        TextColor="White"
+                        Clicked="Bt_entrar_Clicked"/>
+                    <Button x:Name="bt_entrar" 
+                            FontSize="Medium"
+                            TextColor="White"
+                            Text="Entrar" BackgroundColor="SeaGreen" 
+                            Margin="15" HorizontalOptions="FillAndExpand" 
+                            CornerRadius="10"
+                            Clicked="Bt_entrar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

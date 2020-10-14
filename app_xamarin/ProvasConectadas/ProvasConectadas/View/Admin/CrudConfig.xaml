@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ProvasConectadas.View.Admin.CrudConfig">
+    <ContentPage.Content>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="config_back.png" 
+                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Aspect="Fill"/>
+
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <Label Text="Configurações do Dispositivo" 
+                            FontSize="Large"
+                            HorizontalOptions="Center"
+                            TextColor="White" FontAttributes="Bold"
+                            Margin="15,5,15,5"/>
+                <Label Text="IP" 
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="Black" FontAttributes="Bold"
+                            Margin="15,0"/>
+                <Entry x:Name="ip"  
+                            HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"
+                            BackgroundColor="LightBlue"
+                            Margin="15,0"/>
+
+                <Label Text="URL" VerticalOptions="End"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="Black" FontAttributes="Bold"
+                            Margin="15,0"/>
+                <Entry x:Name="url" 
+                            HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"
+                            BackgroundColor="LightBlue"
+                            Margin="15,0"/>
+
+                <Label Text="Código" 
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="Black" FontAttributes="Bold"
+                            Margin="15,0"/>
+                <Entry x:Name="codigo"  
+                            HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"
+                            BackgroundColor="LightBlue"
+                            Margin="15,0"/>
+
+                <Label Text="Chave" 
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="Black" FontAttributes="Bold"
+                            Margin="15,0"/>
+                <Entry x:Name="chave"
+                            HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"
+                            BackgroundColor="LightBlue"
+                            Margin="15,0"/>
+                
+                <StackLayout x:Name="PainelSenha" Orientation="Horizontal" IsVisible="False" Margin="15,0">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Atual    "
+                               TextColor="Orange" FontAttributes="Bold"/>
+                        <Entry x:Name="senhaatual"  
+                               BackgroundColor="LightSkyBlue"
+                               IsPassword="True"/>
+                    </StackLayout >
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Nova     "
+                               TextColor="Orange" FontAttributes="Bold"/>
+                        <Entry x:Name="senha0" 
+                               BackgroundColor="LightSkyBlue"
+                               IsPassword="True"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="Confirmar"
+                               TextColor="Orange" FontAttributes="Bold"/>
+                        <Entry x:Name="senha1" 
+                               BackgroundColor="LightSkyBlue"
+                               IsPassword="True"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                          <ImageButton  x:Name="bt_editardados" Source="bt_editar.png"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center" WidthRequest="95" Aspect="AspectFit"
+                            Clicked="Bt_editardados_Clicked">
+                            <VisualStateManager.VisualStateGroups>
+                              <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                              </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                          </ImageButton>
+                          
+                          <ImageButton  x:Name="bt_senha" Source="bt_senha.png"
+                            IsEnabled="False"
+                            HorizontalOptions="Center" WidthRequest="95" Aspect="AspectFit"
+                            Clicked="Bt_senha_Clicked">
+                            <VisualStateManager.VisualStateGroups>
+                              <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                              </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                          </ImageButton>
+
+                          <ImageButton  x:Name="bt_salvar" Source="bt_salvar.png"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center" WidthRequest="95" Aspect="AspectFit"
+                            Clicked="Bt_salvar_Clicked">
+                            <VisualStateManager.VisualStateGroups>
+                              <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                              </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                          </ImageButton>
+                        </StackLayout>
+              
+                        <StackLayout Orientation="Horizontal" >
+                          <ImageButton  x:Name="bt_crudcursos" Source="bt_cursos.png"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center" WidthRequest="95" Aspect="AspectFit"
+                            Clicked="Bt_crudcursos_Clicked">
+                            <VisualStateManager.VisualStateGroups>
+                              <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                              </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                          </ImageButton>
+
+                          <ImageButton  x:Name="bt_crudtutor" Source="bt_tutores.png"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center" WidthRequest="95" Aspect="AspectFit"
+                            Clicked="Bt_crudtutor_Clicked">
+                            <VisualStateManager.VisualStateGroups>
+                              <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                              </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                          </ImageButton>
+
+                          <ImageButton  x:Name="bt_apagardados" Source="bt_apagar.png"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center" WidthRequest="95" Aspect="AspectFit"
+                            Clicked="Bt_apagardados_Clicked">
+                            <VisualStateManager.VisualStateGroups>
+                              <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                  <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                  </VisualState.Setters>
+                                </VisualState>
+
+                              </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                          </ImageButton>
+                        </StackLayout>                            
+                    </StackLayout>                            
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProvasConectadas.View.EntradaAluno"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="iniciarprova_back.png" 
+                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Aspect="Fill"
+                       Opacity="0.5"/>
+
+            <StackLayout Grid.Column="0" Grid.Row="1" VerticalOptions="FillAndExpand">
+                <Picker x:Name="Pk_cursos" 
+                        Title="Selecione o curso" 
+                        Margin="15,0,15,5"
+                        SelectedIndexChanged="Pk_cursos_SelectedIndexChanged"
+                        BackgroundColor="White"/>
+                <Picker x:Name="Pk_provas" 
+                        Title="Selecione a prova" 
+                        Margin="15,0,15,5"
+                        IsVisible="False"
+                        SelectedIndexChanged="Pk_provas_SelectedIndexChanged"
+                        BackgroundColor="White"/>
+                <StackLayout x:Name="Sl_dados" IsVisible="False">
+                    <Entry x:Name="cpf" Placeholder="CPF - Somente números" Margin="15,0,15,5" Keyboard="Numeric" 
+                           Unfocused="Cpf_Unfocused" Text="33080501020"/>
+                    <Entry x:Name="nome" Placeholder="Nome" Margin="15,0,15,5" Keyboard="Text" Text="Maria das Couves"/>
+                    <Entry x:Name="email" Placeholder="eMail" Margin="15,0,15,5" Keyboard="Email" Text="maria@das.couves"/>
+                    <!--<StackLayout Orientation="Horizontal" > -->
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Button  x:Name="bt_imagem"  Text="Faça uma selfie" TextColor="White" BackgroundColor="SeaGreen"
+                                     VerticalOptions="FillAndExpand" Clicked="Bt_imagem_Clicked"/>
+                            <Image x:Name="imagem" HeightRequest="128" WidthRequest="128" Source="person_icon.png"/>
+                        </StackLayout>
+                        <!--
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Button  x:Name="bt_audio" Text="Grave seu Nome" TextColor="White" BackgroundColor="SeaGreen"
+                                     VerticalOptions="FillAndExpand" Clicked="Bt_audio_Clicked" />
+                            <Button x:Name="ReproduzirButton"  Text="Reproduzir"  Clicked="ReproduzirButton_Clicked"
+                                    IsEnabled="False" TextColor="White" BackgroundColor="SeaGreen"/>
+                        </StackLayout>
+                        -->
+                    <!--</StackLayout > -->
+                    <StackLayout Grid.Row="2" Grid.Column="0">
+                        <ImageButton x:Name="bt_aluno" Source="bt_iniciarprova.png" 
+                             HorizontalOptions="Center" WidthRequest="300" Aspect="AspectFit"
+                             Clicked="Bt_confirma_Clicked" BackgroundColor="Transparent"
+                                     VerticalOptions="EndAndExpand">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

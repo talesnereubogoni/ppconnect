@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProvasConectadas.View.Gabarito">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <ListView x:Name="listaprovas" HasUnevenRows="true" 
+                      SeparatorVisibility="Default" SeparatorColor="Green">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnSpacing="2" RowSpacing="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" x:Name="Pergunta"/>
+                                        <RowDefinition Height="Auto" x:Name="Resposta"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding numero}" HorizontalTextAlignment="Start" 
+                                           FontSize="Medium" VerticalOptions="Start" 
+                                           Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="{Binding enunciado}" HorizontalTextAlignment="Start" 
+                                           FontSize="Medium" VerticalOptions="Start" 
+                                           Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding respostafechadaletra}" TextColor="Blue" 
+                                           HorizontalTextAlignment="Start" 
+                                           FontSize="Medium" VerticalOptions="Start"
+                                           Grid.Row="1" Grid.Column="0"/>
+                                    <Label Text="{Binding resposta_view}" TextColor="Blue"
+                                           HorizontalTextAlignment="Start" 
+                                           FontSize="Medium" VerticalOptions="Center"
+                                           Grid.Row="1" Grid.Column="1"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+                    <ImageButton  x:Name="bt_cancela" Source="bt_voltar.png"
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="Center" WidthRequest="120" Aspect="AspectFit"
+                          Clicked="Bt_cancela_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton  x:Name="bt_Finalizar" Source="bt_finalizar.png"
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="Center" WidthRequest="120" Aspect="AspectFit"
+                          Clicked="Bt_Finalizar_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+
+                    <!--
+                    <Button x:Name="bt_cancela" Text="Voltar" BackgroundColor="Red" 
+                            HeightRequest="80" Padding="30" Clicked="Bt_cancela_Clicked"/>
+                    <Button x:Name="bt_Finalizar" Text="Finalizar Prova" BackgroundColor="Green" 
+                            HeightRequest="80" Padding="30" Clicked="Bt_Finalizar_Clicked"/>
+                    -->
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

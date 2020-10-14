@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ProvasConectadas.View.Admin.GerenciarProvas">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="background_atualizar_disciplinas.png" 
+                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Aspect="Fill"
+                       Opacity="0.5"/>
+
+            <!-- Para Fazer - Busy indicator - animação que o sistema está trabalhando-->
+
+          <ImageButton  x:Name="bt_carregarDisciplinas" Source="bt_atualizar_disciplinas.png"
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="Center" WidthRequest="400" Aspect="AspectFit"
+                          Clicked="Bt_carregarDisciplinas_Clicked_1"
+                          Grid.Row="0" Grid.Column="0">
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal">
+                  <VisualState.Setters>
+                    <Setter Property="Scale" Value="1" />
+                  </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="Pressed">
+                  <VisualState.Setters>
+                    <Setter Property="Scale" Value="0.8" />
+                  </VisualState.Setters>
+                </VisualState>
+
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+          </ImageButton>
+
+<!--
+          <Button x:Name="bt_carregarDisciplinas" 
+                    Text="Atualizar Disciplinas" 
+                    VerticalOptions="Start" HorizontalOptions="FillAndExpand"
+                    BackgroundColor="LightBlue"
+                    Margin="15,2"
+                    CornerRadius="10"
+                    Grid.Row="1" Grid.Column="0"
+                    Clicked="Bt_carregarDisciplinas_Clicked_1"  />
+-->
+            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand">
+                <ScrollView>
+                    <ListView x:Name="listadp"  HasUnevenRows="true" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid ColumnSpacing="5" RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="75" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                            <Label Text="Curso:" WidthRequest="45"/>
+                                            <Label Text="{Binding curso}" HorizontalTextAlignment="Start" 
+                                                     LineBreakMode ="TailTruncation"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                                            <Label Text="Disc:" WidthRequest="45"/>
+                                            <Label Text="{Binding disciplina}" HorizontalTextAlignment="Start" 
+                                                     LineBreakMode ="TailTruncation"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                                            <Label Text="Prova usada?"/>
+                                            <Label Text="{Binding provausada}" HorizontalTextAlignment="Start" 
+                                                    LineBreakMode ="TailTruncation"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                                            <Label Text="Data:" WidthRequest="45"/>
+                                            <Label x:Name="dt_baixada" Text="{Binding data}" 
+                                                    HorizontalTextAlignment="Start" 
+                                                    LineBreakMode ="TailTruncation"/>
+                                        </StackLayout>
+
+                      <ImageButton  x:Name="bt_atualizar" Source="bt_download" 
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="Center" WidthRequest="150" Aspect="AspectFit"
+                          Clicked="Bt_atualizar_Clicked" Grid.Row="0" Grid.Column="1" Grid.RowSpan="4"
+                          CommandParameter="{Binding idDisciplina}">
+                                        <VisualStateManager.VisualStateGroups>
+                                          <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                              <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1" />
+                                              </VisualState.Setters>
+                                            </VisualState>
+
+                                            <VisualState x:Name="Pressed">
+                                              <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8" />
+                                              </VisualState.Setters>
+                                            </VisualState>
+
+                                          </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                      </ImageButton>
+                                      
+                                      <!--
+                                        <Button x:Name="bt_atualizar" BackgroundColor="SkyBlue" 
+                                                ImageSource="{Binding img}" 
+                                                Grid.Row="0" Grid.Column="2" Grid.RowSpan="4" 
+                                                WidthRequest="84" 
+                                                Clicked="Bt_atualizar_Clicked"
+                                                VerticalOptions="Center"
+                                                CommandParameter="{Binding idDisciplina}"/>
+                                                -->
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

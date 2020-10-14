@@ -1,0 +1,8 @@
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\ibtool\_BundleResourceWithLogicalName.items
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\actool\_PartialAppManifest.items
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\actool\_BundleResourceWithLogicalName.items
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\coremlc\_PartialAppManifest.items
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\coremlc\_BundleResourceWithLogicalName.items
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\optimized\
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\ProvasConectadas.iOS.csprojAssemblyReference.cache
+D:\Documentos\Provas Conectadas\ProvasConectadas\ProvasConectadas\ProvasConectadas.iOS\obj\iPhone\Release\ProvasConectadas.iOS.csproj.CoreCompileInputs.cache

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>PPConnect</title>
+  </head>
+
+  <body>
+
+    <div class="btn start-video" title='Ligar câmera'>Ligar</div>
+    <div class="btn record-video" title='Gravar vídeo'> Gravar </div>
+    <div class="btn stop-video" title='Parar gravação'> Parar </div>
+    <div class="btn save-video" title='Salvar vídeo'> Salvar </div>
+    <p>
+    <video id="preview" width="320" height="240" muted autoplay> </video>
+    <video id="record" width="320" height="240" controls></video>
+    
+  <script>
+  
+    let videoRecorder = null;
+    function startCamera () {
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: true })
+            .then((stream) => {
+                document.getElementById('preview').srcObject = stream
+                videoRecorder = null
+            })
+    }
+    
+    function stopCamera () {
+        document.getElementById('preview')
+            .srcObject
+            .getVideoTracks()
+            .forEach(track => track.stop())
+    }
+
+    document.querySelector('.start-video').addEventListener('click', event => {
+        startCamera()
+        document.getElementById('record').style.display = 'none'
+        document.getElementById('preview').style.display = 'block'
+        
+    })
+    
+    document.querySelector('.stop-video').addEventListener('click', event => {
+        //stopCamera()
+         // se o vídeo estava sendo gravado, quer dizer que o usuário
+            // quer finalizar a gravação
+            videoRecorder.stop()
+            // e podemos também finalizar a câmera
+            stopCamera()
+            document.getElementById('record').style.display = 'block'
+            document.getElementById('preview').style.display = 'none'
+    })
+    
+    var video = null;
+    var urlimagem=null;
+    var dataURL=null;
+    let blob = null;
+    document.querySelector('.record-video').addEventListener('click', event => {
+        let chunks = []
+        const preview = document.getElementById('preview')
+        // caso não estejamos gravando, começaremos
+        if (!videoRecorder) {
+            // vamos usar o mesmo stream que já está ativo em nosso vídeo
+            const stream = preview.srcObject
+
+            videoRecorder = new MediaRecorder(stream)
+            videoRecorder.start(3000)
+
+            // sempre que um novo chunk estiver pronto, ou
+            // quando a gravação for finalizada
+            videoRecorder.ondataavailable = event => {
+                // nós simplesmente armazenaremos o novo chunk
+                chunks.push(event.data)
+            }
+   
+            videoRecorder.onstop = event => {
+                blob = new Blob(chunks, { 'type' : 'video/mp4' })
+                video = document.getElementById('record');
+                video.src = window.URL.createObjectURL(blob);
+                urlimagem = URL.createObjectURL(blob);
+                dataURL = urlCreator.createObjectURL(blob);;
+            }
+
+        } 
+    })  
+    
+      document.querySelector('.save-video').addEventListener('click', event => { 
+            $.ajax({ 
+                type: 'POST', 
+                url: 'http://localhost/ppconnectpolo/rest.php', 
+                data: {
+                    'class': 'QuestoesDasProvasGeradasService',
+                    'method': 'storevideo',
+                    'vid' : dataURL
+                }, 
+                //dataType: 'json',
+                success: function (response) { 
+                    console.log(response);
+                    $(".ui-dialog-titlebar-close").click();
+                },
+                    error: function(response) {
+                    alert('erro');
+                }
+            });
+            
+        }) 
+    </script>
+
+  </body>
+</html>

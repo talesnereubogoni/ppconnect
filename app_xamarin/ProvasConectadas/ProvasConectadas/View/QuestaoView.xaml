@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:o="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             mc:Ignorable="d"
+             x:Class="ProvasConectadas.View.QuestaoView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid ColumnSpacing="5" RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" x:Name="grid_enunciado"/>
+                    <RowDefinition Height="Auto" x:Name="grid_imagem_enunciado"/>
+                    <RowDefinition Height="Auto" x:Name="grid_botoes_resposta"/>
+                    <RowDefinition Height="*" x:Name="grid_resposta"/>
+                    <RowDefinition Height="80" x:Name="grid_botoes"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <!-- grid_enunciado -->
+                <Label x:Name="c_enunciado" FontSize="Medium" Margin="10,0,0,10"
+                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+                <!-- imagem do player de video do enunciado -->
+                <ImageButton x:Name="bt_video_enunciado" Source="video_icon.png" BackgroundColor="Transparent" 
+                       VerticalOptions="Start" WidthRequest="40" HeightRequest="40"
+                       Grid.Row="0" Grid.Column="3" IsVisible="False"/>
+                
+                <!-- grid_imagem_enunciado -->
+                <Image  x:Name="c_imagem" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" HeightRequest="200">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnImageNameTapped" NumberOfTapsRequired="2" />
+                        </Image.GestureRecognizers>
+                </Image>
+
+                <!-- grid_botoes_resposta -->
+                <StackLayout x:Name="bt_respostas_view" IsVisible="False"
+                             Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+
+                    <StackLayout Orientation="Horizontal" Padding="5" Margin="5" HorizontalOptions="CenterAndExpand" >
+                        <Button x:Name="bt_texto" 
+                                ImageSource="text_icon_48.png"
+                                Clicked="Bt_texto_Clicked"/>
+                        <Button x:Name="bt_imagem" 
+                                ImageSource="camera_icon_48.png"
+                                Clicked="Bt_imagem_Clicked"/>
+                        <Button x:Name="bt_video" 
+                                ImageSource="video_icon_48.png"
+                                Clicked="Bt_video_Clicked"/>
+                        <Button x:Name="bt_audio" 
+                                ImageSource="audio_icon_48.png"
+                                Clicked="Bt_audio_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+                <!-- grid_respostas -->                 
+                
+                <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"  x:Name="stack_respostas">
+                    <!-- resposta com imagem -->
+                    <Image x:Name="resp_img" IsVisible="False"/>
+                    <!-- resposta com texto -->
+                    <Editor x:Name="resp_txt" Placeholder="Digite sua resposta" 
+                            VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                            IsVisible="False"/>
+                    <o:VideoPlayer x:Name="resp_vid" 
+                                   AutoPlay="False" DisplayControls="True" Repeat="False"
+                                   IsVisible="False"/>
+                    <Image x:Name="resp_aud" IsVisible="False"/>
+
+                    <StackLayout x:Name="stack_alternativas">
+                        <input:RadioButtonGroupView x:Name="alternativas">
+                            <StackLayout Orientation="Horizontal">
+                                <input:RadioButton x:Name="c_a" TextFontSize="16" Value="A"/>
+                                <ImageButton x:Name="bt_video_a" Source="video_icon.png" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                            </StackLayout>
+                            <Image x:Name="c_imagem_a"  HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageNameTapped" NumberOfTapsRequired="2" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <StackLayout Orientation="Horizontal">
+                                <input:RadioButton x:Name="c_b" TextFontSize="16" Value="B"/>
+                                <ImageButton x:Name="bt_video_b" Source="video_icon.png" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                            </StackLayout>
+                            <Image x:Name="c_imagem_b" HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageNameTapped" NumberOfTapsRequired="2" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <StackLayout Orientation="Horizontal">
+                                <input:RadioButton x:Name="c_c" TextFontSize="16" Value="C"/>
+                                <ImageButton x:Name="bt_video_c" Source="video_icon.png" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                            </StackLayout>
+                            <Image x:Name="c_imagem_c" HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageNameTapped" NumberOfTapsRequired="2" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <StackLayout Orientation="Horizontal">
+                                <input:RadioButton x:Name="c_d" TextFontSize="16" Value="D"/>
+                                <ImageButton x:Name="bt_video_d" Source="video_icon.png" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                            </StackLayout>
+                            <Image x:Name="c_imagem_d"  HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageNameTapped" NumberOfTapsRequired="2" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <StackLayout Orientation="Horizontal">
+                                <input:RadioButton x:Name="c_e" TextFontSize="16" Value="E"/>
+                                <ImageButton x:Name="bt_video_e" Source="video_icon.png" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="40" HeightRequest="40"/>
+                            </StackLayout>
+                            <Image x:Name="c_imagem_e"  HorizontalOptions="Start">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnImageNameTapped" NumberOfTapsRequired="2" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </input:RadioButtonGroupView>
+                    </StackLayout>
+
+                </StackLayout>
+                <!-- grid_botoes -->
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" 
+                             Orientation="Horizontal" HorizontalOptions="Center"
+                             VerticalOptions="End">
+                    <ImageButton  x:Name="bt_cancela" Source="bt_nao.png"
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="Center" WidthRequest="70" Aspect="AspectFit"
+                          Clicked="Bt_cancela_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton  x:Name="bt_confirma" Source="bt_sim.png"
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="Center" WidthRequest="70" Aspect="AspectFit"
+                          Clicked="Bt_confirma_Clicked">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <!--
+                    <Button x:Name="bt_cancela" BackgroundColor="Red" 
+                            HeightRequest="50" 
+                            Clicked="Bt_cancela_Clicked" 
+                            ImageSource="cancel_icon.png"/>
+                    <Button x:Name="bt_confirma" BackgroundColor="Green" 
+                            HeightRequest="50" Clicked="Bt_confirma_Clicked" ImageSource="ok_icon.png"/>
+-->
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

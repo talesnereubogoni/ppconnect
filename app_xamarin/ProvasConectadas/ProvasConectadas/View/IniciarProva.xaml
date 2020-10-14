@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProvasConectadas.View.IniciarProva"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="background.png" 
+                       Grid.Row="0" Grid.Column="0" Aspect="Fill" Grid.RowSpan="5"
+                       Opacity="0.5"/>
+            <Label Text="Atenção!" FontSize="Large" HorizontalOptions="FillAndExpand" 
+                    HorizontalTextAlignment="Center" BackgroundColor="White"
+                    TextColor="CornflowerBlue" FontAttributes="Bold"
+                    Grid.Row="0" Grid.Column="0"/>
+            <StackLayout  Grid.Row="1" Grid.Column="0">
+                <Label x:Name="nomedoaluno" FontSize="Large" 
+                       HorizontalOptions="Center" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="CPF: " FontSize="Large" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                    <Label x:Name="cpf" FontSize="Large" HorizontalTextAlignment="Start" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="StartAndExpand">
+                <Label Text="você está prestes a iniciar a prova da disciplina de "  
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center" 
+                   FontSize="Large"/>
+                <Label x:Name="nomedadisciplina" FontSize="Large" 
+                       HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Label Text="Ao iniciar a prova não poderá retornar mais a esta tela ou fazer outras alterações no perfil do usuário!" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Large"/>
+            </StackLayout>
+            
+            <Button x:Name="bt_confirma" Text="Confirmar os dados e iniciar a prova" 
+                    Clicked="Bt_confirma_Clicked" BackgroundColor="SeaGreen" 
+                    VerticalOptions="End" Margin="20,0" CornerRadius="10" TextColor="White"
+                    Grid.Row="3" Grid.Column="0"/>
+            <Button x:Name="bt_cancela" Text="Cencelar" 
+                    Clicked="Bt_cancela_Clicked" BackgroundColor="OrangeRed" 
+                    VerticalOptions="End" Margin="20,0" CornerRadius="10" TextColor="White"
+                    Grid.Row="4" Grid.Column="0"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

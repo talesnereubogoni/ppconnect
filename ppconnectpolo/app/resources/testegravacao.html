@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Web dictaphone</title>
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+  </head>
+
+ <style>
+.picture-canvas {
+  display: none;
+}
+ </style>
+  <body>
+
+<div class="btn start-video" title='Ligar'>Ligar</div>
+<div class="btn stop-video" title='Desligar'>Parar</div>
+<div class="btn take-picture" title='Tirar uma foto'> Foto </div>
+<div class="btn record-video" title='Gravar vídeo'> Video </div>
+<div class="btn record-audio" title='Gravar audio'> Audio </div>
+<p>
+<video id="preview" width="320" height="240" muted autoplay> </video>
+<p>
+<video id="record" width="320" height="240" controls></video>
+<p>
+<canvas id="picture-canvas"></canvas>
+<p>
+
+
+<script>
+
+    function startCamera () {
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: true })
+            .then((stream) => {
+                document.getElementById('preview').srcObject = stream
+            })
+    }
+    
+    function stopCamera () {
+        document.getElementById('preview')
+            .srcObject
+            .getVideoTracks()
+            .forEach(track => track.stop())
+    }
+
+    document.querySelector('.start-video').addEventListener('click', event => {
+        startCamera()
+    })
+    
+    document.querySelector('.stop-video').addEventListener('click', event => {
+        stopCamera()
+    })
+
+    document.querySelector('.take-picture').addEventListener('click', event => {
+        // coletamos os elementos que precisamos referenciar
+        const canvas = document.getElementById('picture-canvas')
+        const context = canvas.getContext('2d')
+        const video = document.getElementById('preview')
+        // o canvas terá o mesmo tamanho do vídeo
+        canvas.width = video.offsetWidth
+        canvas.height = video.offsetHeight
+        // e então, desenhamos o que houver no vídeo, no canvas
+        context.drawImage(video, 0, 0, canvas.width, canvas.height)
+
+        // olha que barbada, o canvas tem um método toBlob!
+        canvas.toBlob(function(blob){
+            const url = URL.createObjectURL(blob)
+            // podemos usar esta URL em um elemento de vídeo, ou fazer upload do blob, etc.
+            // e então, não precisamos mais da câmera
+            //stopCamera()
+        }, 'image/jpeg', 0.95)
+        //closeCamera()
+    })
+
+    let videoRecorder = null
+    document.querySelector('.record-video').addEventListener('click', event => {
+        let chunks = []
+        const preview = document.getElementById('preview')
+        // caso não estejamos gravando, começaremos
+        if (!videoRecorder) {
+            // vamos usar o mesmo stream que já está ativo em nosso vídeo
+            const stream = preview.srcObject
+
+            videoRecorder = new MediaRecorder(stream)
+            videoRecorder.start(3000)
+
+            // sempre que um novo chunk estiver pronto, ou
+            // quando a gravação for finalizada
+            videoRecorder.ondataavailable = event => {
+                // nós simplesmente armazenaremos o novo chunk
+                chunks.push(event.data)
+            }
+   
+            // e, finalmente, quando a gravação é finalizada
+            videoRecorder.onstop = event => {
+            // nós montaremos um blob a partir de nossos chunks
+            // nesse caso, no formato de vídeo/mp4
+                let blob = new Blob(chunks, { 'type' : 'video/mp4' })
+                var video = document.getElementById('record');
+                video.src = window.URL.createObjectURL(blob);
+                // e podemos usar o nosso blob, aqui, à vontade
+            }
+
+        } else {
+            // se o vídeo estava sendo gravado, quer dizer que o usuário
+            // quer finalizar a gravação
+            videoRecorder.stop()
+            // e podemos também finalizar a câmera
+            stopCamera()
+        }
+    })
+    
+    $(function () {
+    var client,
+        recorder,
+        context,
+        bStream,
+        contextSampleRate = (new AudioContext()).sampleRate;
+        resampleRate = contextSampleRate,
+        worker = new Worker('js/worker/resampler-worker.js');
+
+    worker.postMessage({cmd:"init",from:contextSampleRate,to:resampleRate});
+
+    worker.addEventListener('message', function (e) {
+        if (bStream && bStream.writable)
+            bStream.write(convertFloat32ToInt16(e.data.buffer));
+    }, false);
+
+    $("#start-rec-btn").click(function () {
+        close();
+        client = new BinaryClient('wss://'+location.host);
+        client.on('open', function () {
+            bStream = client.createStream({sampleRate: resampleRate});
+        });
+
+        if (context) {
+            recorder.connect(context.destination);
+            return;
+        }
+
+        var session = {
+            audio: true,
+            video: false
+        };
+
+
+        navigator.getUserMedia(session, function (stream) {
+            context = new AudioContext();
+            var audioInput = context.createMediaStreamSource(stream);
+            var bufferSize = 0; // let implementation decide
+
+            recorder = context.createScriptProcessor(bufferSize, 1, 1);
+
+            recorder.onaudioprocess = onAudio;
+
+            audioInput.connect(recorder);
+
+            recorder.connect(context.destination);
+
+        }, function (e) {
+
+        });
+    });
+
+    function onAudio(e) {
+        var left = e.inputBuffer.getChannelData(0);
+
+        worker.postMessage({cmd: "resample", buffer: left});
+
+        drawBuffer(left);
+    }
+
+    function convertFloat32ToInt16(buffer) {
+        var l = buffer.length;
+        var buf = new Int16Array(l);
+        while (l--) {
+            buf[l] = Math.min(1, buffer[l]) * 0x7FFF;
+        }
+        return buf.buffer;
+    }
+
+    //https://github.com/cwilso/Audio-Buffer-Draw/blob/master/js/audiodisplay.js
+    function drawBuffer(data) {
+        var canvas = document.getElementById("canvas"),
+            width = canvas.width,
+            height = canvas.height,
+            context = canvas.getContext('2d');
+
+        context.clearRect (0, 0, width, height);
+        var step = Math.ceil(data.length / width);
+        var amp = height / 2;
+        for (var i = 0; i < width; i++) {
+            var min = 1.0;
+            var max = -1.0;
+            for (var j = 0; j < step; j++) {
+                var datum = data[(i * step) + j];
+                if (datum < min)
+                    min = datum;
+                if (datum > max)
+                    max = datum;
+            }
+            context.fillRect(i, (1 + min) * amp, 1, Math.max(1, (max - min) * amp));
+        }
+    }
+
+    $("#stop-rec-btn").click(function () {
+        close();
+    });
+
+    function close(){
+        console.log('close');
+        if(recorder)
+            recorder.disconnect();
+        if(client)
+            client.close();
+    }
+});
+
+navigator.getUserMedia = navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia;
+
+    mediaRecorder.addEventListener('stop', function() {
+      downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
+      downloadLink.download = 'acetest.wav';
+    });
+
+    mediaRecorder.start();
+    };
+
+    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+         .then(handleSuccess)
+
+    </script>
+
+  </body>
+</html>
